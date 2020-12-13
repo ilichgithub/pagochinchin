@@ -1,0 +1,23 @@
+/*Estilo botones*/
+.btn-tvs{
+  align-items: center;
+  border-radius: 1.5rem;
+  display: flex;
+  font-size: 1.2rem;
+  height: 3rem;
+  justify-content: center;
+  margin: 1rem;
+  outline: none!important;
+  width: 8rem!important;
+}
+
+.btn-tvs-dark, .btn-tvs-dark:hover{
+  background: var(--secondth-color);
+  border: 1px solid var(--secondth-color);
+  color: white;
+}
+
+.btn-tvs-light, .btn-tvs-light:hover{
+  border: 1px solid var(--secondth-color);
+  color: var(--secondth-color);
+}

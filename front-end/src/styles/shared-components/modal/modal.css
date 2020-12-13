@@ -1,0 +1,60 @@
+/*MODAL */
+.modal-dialog{
+  height: 40%;
+  color: var(--first-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+.modal-content{
+  border: 0px!important;
+  width: 85% !important;
+}
+
+.modal-header{
+  background: var(--first-color);
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: .5em;
+}
+.modal-title{
+  font-weight: bold;
+}
+.modal-body,
+.modal-footer-white{
+  display: flex;
+  justify-content: center;
+  background: white !important;
+  border: 1px white solid;
+}
+
+.modal-body p{
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+
+.btn-tvs-modal{
+  width: 8rem!important;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  outline: none!important;
+  border-radius: 1.33rem;
+  color: white;
+  background-color: var(--secondth-color);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-tvs-inverse{
+  width: 8rem!important;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 1.33rem;
+  color: var(--secondth-color);
+  background-color: white;
+  border: 1px solid var(--secondth-color);
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+{
+  "login": {
+    "username": "username or Email",
+    "password": "Password",
+    "login": "Login",
+    "forgotPassword": "Forgot password?"
+  },
+  "error": {
+    "required": "Required field",
+    "minLength": "Min length is 6",
+    "pattern": "Chars not permitted"
+  },
+  "header": {
+    "english": "english"
+  },
+  "footerContent": "TVS ©  "
+}

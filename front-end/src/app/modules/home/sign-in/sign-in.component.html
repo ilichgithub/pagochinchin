@@ -1,0 +1,104 @@
+<!-- page sign-in -->
+<div class="signin-container">
+  <div class="signin-display-div">
+    <!-- logo -->
+    <div class="signin-logo">
+      <img [src]="logoTvs.src" [alt]="logoTvs.alt" [width]="logoTvs.width*2" [height]="logoTvs.height*2">
+    </div>
+
+    <!-- texto -->
+    <div class="signin-text-div">
+      <p>Ingrese los datos solicitados a continuación</p>
+    </div>
+    
+    <!-- Formularios -->
+    <form [formGroup]="formRegister" class="signin-form">
+      
+      <div>
+
+        <div *ngIf="caseForm === 'dni'">     
+          <input  formControlName="dni"
+                  class="signin-input" 
+                  #inputId (keyup)="isValidInput(inputId,$event)"
+                  onfocus="this.value=''"
+                  placeholder="Documento de identidad">
+        </div>
+
+        <div *ngIf="caseForm === 'nombre'">  
+          <input  formControlName="nombre"
+                  class="signin-input" 
+                  #inputId (keyup)="isValidInput(inputId,$event)"
+                  onfocus="this.value=''"
+                  placeholder="Nombre">
+        </div>
+
+        <div *ngIf="caseForm === 'apellido'">
+          <input  formControlName="apellido"
+                  class="signin-input" 
+                  #inputId (keyup)="isValidInput(inputId,$event)"
+                  onfocus="this.value=''"
+                  placeholder="Apellido">
+        </div>
+
+        <div *ngIf="caseForm === 'fechaNac'">
+          <input  formControlName="fechaNac"
+                  maxlength=10
+                  pattern="^[0-9/]+$"
+                  #inputId (keyup)="isValidInput(inputId,$event);"
+                  class="signin-input" 
+                  onfocus="this.value=''"
+                  placeholder="Fecha nacimiento">
+        </div>
+
+        <div *ngIf="caseForm === 'correo'">
+          <input  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  formControlName="correo"
+                  class="signin-input" 
+                  #inputId (keyup)="isValidInput(inputId,$event)"
+                  onfocus="this.value=''"
+                  placeholder="Correo">
+        </div>
+
+      
+      </div>
+
+      <div>
+        <div *ngIf="caseForm!=='correo'"> <button type="button" [disabled]="!enabledBtn" (click)="nextInput(caseForm)" class="signin-btn">Siguiente</button> </div>
+        <div *ngIf="caseForm==='correo'"> <button type="submit" [disabled]="!enabledBtn" (click)="nextInput(caseForm);sendForm(contenido)" class="signin-btn">Validar</button> </div>
+      </div>
+
+    </form>
+
+  </div>
+  <!-- modo DEV -->
+  <!-- <pre class="text-white">estatus {{caseForm}} : {{ formRegister.controls[caseForm].valid }}</pre>
+  <pre class="text-white">{{ formRegister.value | json}}</pre> -->
+
+</div>
+<div class="footer footer-tvs-login footer-first-color">
+  CGTS CORP INC {{ actuallyYear }} ALL RIGTHS RESERVED
+</div>
+
+<!-- spiner TODO: convertir en componente-->
+<div *ngIf="caseForm === 'spiner'" class="loader-container">
+  <div class="loader">
+    Loading...
+  </div>
+</div>
+
+<!-- modal TODO: convertir en componente-->
+<ng-template  #contenido let-modal let-c="close" class="modal-align">
+  <div class="modal-container">
+    <div class="modal-header"><p class="modal-title">{{ msgModal['header'] }}</p></div>
+    <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+      <img [src]="msgModal['icon'].src" [alt]="msgModal['icon'].src" width="25" height="25">
+      <p>{{ msgModal['body'] }}</p>
+    </div>
+    <div class="modal-footer-white">
+			
+      <button *ngIf="!userRegisterable" type="button" (click)="c('Salir')" class="btn-tvs-modal">Aceptar</button>
+      <button *ngIf="userRegisterable" type="button" (click)="continueRegister();c('Salir')" class="btn-tvs-modal">Aceptar</button>
+		
+		</div>
+  </div>
+</ng-template>

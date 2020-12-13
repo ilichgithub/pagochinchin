@@ -1,0 +1,111 @@
+<!-- page sign-in -->
+<div class="setting-two-fa-container">
+
+  <div class="setting-two-fa-display-div">
+  
+    <div class="setting-two-fa-col">
+      <!-- Step 1-->
+      <div class="setting-two-fa-step-div setting-two-distance-between-step">
+        <h1 class="setting-two-fa-number-step">1</h1>
+        <p class="">
+          Instala Google Authenticator en tu dispositivo móvil.
+        </p>
+      </div>
+      <!-- Step 2-->
+      <div class="setting-two-fa-step-div setting-two-distance-between-step">
+        <h1 class="setting-two-fa-number-step">2</h1>
+        <p class="">
+          Escanee el código QR de abajo para sincronizar tu dispositivo móvil.
+        </p>
+      </div>
+      <!-- Step 3-->
+      <div class="setting-two-fa-step-div setting-two-distance-between-step">
+        <h1 class="setting-two-fa-number-step">3</h1>
+        <p class="">
+          Luego de escanear con éxito el codigo QR, confirma la lectura y preisona el botón de "continuar" e introduce tus datos de usuario.
+        </p>
+      </div>
+       <!-- <p>Status</p><pre class="text-white">{{ formSettingTwoFa.status | json }}</pre>
+       <p>valid</p><pre class="text-white">{{ formSettingTwoFa.valid | json }}</pre>
+       <p>invalid</p><pre class="text-white">{{ formSettingTwoFa.invalid | json }}</pre> -->
+    </div>
+
+    <div class="setting-two-fa-col">
+      <!-- Text QR-->
+      <div class="setting-two-fa-text-div">
+        <p>Enfoque el código con el lector</p>
+      </div>
+      <!-- Image QR -->
+      <div class="setting-two-fa-QR-div">
+        <img src='https://chart.googleapis.com/chart?cht=qr&chl=%C2%AC%C2%AC%20this%20work%20QA&chs=180x180&choe=UTF-8&chld=L|2' alt='qr code'>
+      </div>
+      <!-- Form -->
+      <div class="setting-two-fa-form-div">
+        <form [formGroup]="formSettingTwoFa" (ngSubmit)="sendForm(contenido)">
+        <!-- Text Input -->
+        <div class="setting-two-fa-text-div">
+          <p>Código para ingresar la llave</p>
+        </div>
+        <!-- Input code -->
+          <div class="setting-two-fa-input-div">
+            <!--#codeKey (keyup)="isValid('codeKey',codeKey.value)" -->
+            <input  type="text" 
+                    class="setting-two-fa-input-code"
+                    (keyup)="enabledSubmit()"
+                    formControlName="codeKey">
+          </div>
+          <!-- Checkbox QR Code -->
+          <div class="setting-two-fa-input-div">
+           
+            <label class="setting-two-fa-label">
+              <input  type="checkbox"
+                      #checkbox
+                      formControlName="checkbox"
+                      value="confirmed"
+                      (change)="enabledSubmit()">
+              <span class="checkbox-custom"></span>
+            </label>
+            <p class="setting-two-fa-text-label">He leído correctamente el código QR con mi dispositivo móvil</p>
+          </div>
+          <div class="setting-two-fa-input-div">
+            <button type="submit" 
+                    [disabled]="disabledBtn" 
+                    class="setting-two-fa-button mt-2">Siguiente</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+<!-- footer -->
+<div class="footer footer-tvs-login footer-first-color">
+  CGTS CORP INC {{ actuallyYear }} ALL RIGTHS RESERVED
+</div>
+
+
+<!-- spiner TODO: convertir en componente-->
+<div *ngIf="caseForm === 'spiner'" class="loader-container">
+  <div class="loader">
+    Loading...
+  </div>
+</div>
+
+<!-- modal TODO: convertir en componente-->
+<ng-template  #contenido let-modal let-c="close" class="modal-align">
+  <div class="modal-container">
+    <div class="modal-header"><p class="modal-title">{{ msgModal['header'] }}</p></div>
+    <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+      <!-- <img [src]="msgModal['icon'].src" [alt]="msgModal['icon'].src" width="25" height="25"> -->
+      <p>{{ msgModal['body'] }}</p>
+    </div>
+    <div class="modal-footer-white">
+			
+      <button *ngIf="!modalContinue" type="button" (click)="c('Salir')" class="btn-tvs-modal">Aceptar</button>
+      <button *ngIf="modalContinue" type="button" (click)="continueRegister();c('Salir')" class="btn-tvs-modal">Aceptar</button>
+		
+		</div>
+  </div>
+</ng-template>

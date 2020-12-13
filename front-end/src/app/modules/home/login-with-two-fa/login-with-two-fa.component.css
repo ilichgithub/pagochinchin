@@ -1,0 +1,16 @@
+.text-2fa {
+	font-size: 1.3rem;
+}
+.form-responsive-2fa {
+	margin-top: 4rem;
+}
+.input-pin{
+	padding: 0.5rem;
+	text-align: center;
+	font-family: monospace;
+}
+.input-pin::placeholder{
+	padding: 0;
+	text-align: left;
+	font-family: "Open Sans", serif;
+}

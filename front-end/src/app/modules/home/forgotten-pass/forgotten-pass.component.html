@@ -1,0 +1,56 @@
+ <div class="login-container">
+	<div class="d-flex justify-content-center flex-column align-items-center h-75">
+		<!-- Logo TVS -->
+		<div class="mb-5">
+			<img [src]="logoTvs.src" [alt]="logoTvs.alt" class="logo-responsive">
+		</div>
+		
+		<!-- Formulario -->
+		<div>
+			<form class="form-responsive" (ngSubmit)="sendForm(contenido)" [formGroup]="formForgotten">
+		
+				<div class="d-flex justify-content-center flex-column align-content-center">
+					
+					<div class="justify-content-center d-flex w-100 mb-2">  
+						<i class="icon-login mr-1 material-icons ">person_outline</i>
+						<input  formControlName="userForgotten" type="text"
+										class="form-control input-bg-secondth-color"
+										maxlength="10" minLength="6" 
+										placeholder="Usuario"
+										(keyup)="enabledButton(userForgotten)"
+										#userForgotten
+						/>
+					</div>
+					
+					<div class="justify-content-center d-flex mt-4">
+						<button [disabled]="!enabledBtn"
+										class="btn-forgotten" 
+										[ngClass]="{ 'btn-disabled-forgotten': !enabledBtn,
+																 'btn-enabled-forgotten fnt-fifth-color': enabledBtn}"
+										>Enviar
+						</button>
+					</div>
+					
+				</div>
+				
+			</form>
+		</div>
+
+	</div>
+</div>
+<div class="footer footer-tvs-login footer-first-color">
+  CGTS CORP INC {{ actuallyYear }} ALL RIGTHS RESERVED
+</div>
+<!-- modal -->
+<ng-template  #contenido let-modal let-c="close" class="modal-align">
+  <div class="modal-container">
+    <div class="modal-header"><p class="modal-title">{{ msgModal['header'] }}</p></div>
+    <div class="modal-body"><p>{{ msgModal['body'] }}</p></div>
+    <div class="modal-footer-white">
+			
+      <button *ngIf="!userValid" type="button" (click)="c('Salir')" class="btn-tvs-modal">Aceptar</button>
+      <button *ngIf="userValid" type="button" (click)="redirectHome();c('Salir')" class="btn-tvs-modal">Aceptar</button>
+		
+		</div>
+  </div>
+</ng-template>

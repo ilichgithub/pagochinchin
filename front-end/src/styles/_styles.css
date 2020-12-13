@@ -1,0 +1,26 @@
+@import "colors.css";
+
+@import "module/auth/login.css";
+@import "layout/footer.css";
+@import "layout/header.css";
+
+/*ESTILOS COMPARTIDOS DE COMPONENTES*/
+
+/*BREADCRUMBS*/
+@import "shared-components/breadcrumbs/breadcrumbs.css";
+
+/*BOTONES*/
+@import "shared-components/buttons/buttons.css";
+
+/*INPUTS*/
+@import "shared-components/inputs/inputs.css";
+
+/*MODAL*/
+@import "shared-components/modal/modal.css";
+
+/*TABLAS*/
+@import "shared-components/tables/table-default.css";
+@import "shared-components/tables/table-profile.css";
+
+/* SPINER DE CARGA */
+@import "shared-components/spiner/spiner.css"

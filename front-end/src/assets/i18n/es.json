@@ -1,0 +1,17 @@
+{
+  "login": {
+    "username": "Usuario o Correo Electrónico",
+    "password" : "Contraseña",
+    "login": "Iniciar sesión",
+    "forgotPassword": "¿Olvido su contraseña?",
+    "error": {
+      "required" : "Campo requerido",
+      "minLength": "Mínimo es 6",
+      "pattern": "Caracteres no permitido"
+    }
+  },
+  "header": {
+    "english": "ingles"
+  },
+  "footerContent": "TVS ©  "
+}

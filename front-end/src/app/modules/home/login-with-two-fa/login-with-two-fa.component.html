@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="flex-column align-items-center w-100">
+    <div class="justify-content-center d-flex">
+      <img [src]="logo.src" [alt]="logo.alt" class="logo-responsive">
+    </div>
+
+    <div class="justify-content-center d-flex" >
+      <form [formGroup]="twoFaForm" (ngSubmit)="sendPin(contenido)" class="form-responsive-2fa">
+        <div class="mb-3">
+          <p class="text-center text-white text-2fa">
+            Por favor introduzca el código que <br>
+            le indica el autenticador
+          </p>
+        </div>
+        <div class="mt-3 form-group justify-content-center d-flex form-group">
+          <input type="text" 
+                 class="input-bg-secondth-color input-pin" 
+                 placeholder="PIN"
+                 maxlength="6"
+                 formControlName="pin"
+                 #pin
+                 (keyup)="checkReadyToSend(pin,$event)"/>
+        </div>
+        <div *ngIf="enabledBtn" class="mt-3 form-group justify-content-center d-flex form-group">
+          <button type="submit" class="btn-tvs btn-tvs-light">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<!-- footer -->
+<div class="footer footer-tvs-login footer-first-color">
+  CGTS CORP INC {{ actuallyYear }} ALL RIGTHS RESERVED
+</div>
+<!-- modal -->
+<ng-template  #contenido let-modal let-c="close" class="modal-align">
+  <div class="modal-container">
+    <div class="modal-header"><p class="modal-title">{{ msgModal['header'] }}</p></div>
+    <div class="modal-body"><p>{{ msgModal['body'] }}</p></div>
+    <div class="modal-footer-white">
+      <button *ngIf="!isValid" type="button" (click)="c('Salir')" class="btn-tvs-modal">Aceptar</button>
+      <button *ngIf="isValid" type="button" (click)="c('Salir');redirectLogin()" class="btn-tvs-modal">Aceptar</button>
+    </div>
+  </div>
+</ng-template>

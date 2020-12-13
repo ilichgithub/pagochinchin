@@ -1,0 +1,95 @@
+<!-- page sign-in -->
+<div class="signin-container">
+  <div class="signin-display-div">
+    <!-- logo -->
+    <div class="signin-logo">
+      <img [src]="logoTvs.src" [alt]="logoTvs.alt" [width]="logoTvs.width*2" [height]="logoTvs.height*2">
+    </div>
+
+    <!-- texto -->
+    <div class="signin-text-div">
+      <p>Ingrese los datos solicitados a continuación</p>
+    </div>
+    
+    <!-- Formularios -->
+    <div class="signin-form-div">
+      <form [formGroup]="formRegister2" class="signin-form">
+        
+        <div>
+  
+          <div class="mb-4">
+            <input  formControlName="user"
+                    autofocus
+                    class="signin-input" 
+                    #userId (keyup)="isValidInput(userId,$event)"
+                    onfocus="this.value='';msgInput='valid';"
+                    placeholder="Nombre de usuario">
+              <span *ngIf="userInvalid('required')" class="mt-0 pt-0 label-error-message"> Requerido </span>
+              <span *ngIf="userInvalid('minLength')" class="mt-0 pt-0 label-error-message"> Minimo 6 caracteres </span>
+          </div>
+
+  
+          <div class="mb-4">  
+            <input  formControlName="password"
+                    type="password"
+                    class="signin-input"
+                    [ngClass]="{'signin-input-invalid': invalidPass}"
+                    #passId (keyup)="isValidInput(userId,$event)"
+                    (blur)="passwordInvalid(passId.value)"
+                    onfocus="this.value='';msgInput='valid';invalidPass=false"
+                    placeholder="Contraseña">
+          </div>
+  
+          <div class="mb-4">
+            <input  formControlName="againPassword"
+                    type="password"
+                    class="signin-input" 
+                    [ngClass]="{'signin-input-invalid': invalidAgain}"
+                    #repPassId (keyup)="isValidInput(repPassId,$event)"
+                    (blur)="passwordDiferent(passId.value,repPassId.value)"
+                    onfocus="this.value='';msgInput='valid';"
+                    placeholder="Repetir contraseña"
+                    >
+          </div>
+        
+        </div>
+        
+        <div *ngIf="msgInput!=='valid'" class="popup signin-input-div"><span class="popuptext show">{{msgInput}}</span></div> 
+  
+        <div>
+          <div> <button type="submit" [disabled]="!enabledBtn" (click)="sendForm(contenido)" class="signin-btn">Registrar</button> </div>
+        </div>
+  
+      </form>
+    </div>
+
+  </div>
+
+</div>
+<div class="footer footer-tvs-login footer-first-color">
+  CGTS CORP INC {{ actuallyYear }} ALL RIGTHS RESERVED
+</div>
+
+<!-- spiner TODO: convertir en componente-->
+<div *ngIf="caseForm === 'spiner'" class="loader-container">
+  <div class="loader">
+    Loading...
+  </div>
+</div>
+
+<!-- modal TODO: convertir en componente-->
+<ng-template  #contenido let-modal let-c="close" class="modal-align">
+  <div class="modal-container">
+    <div class="modal-header"><p class="modal-title">{{ msgModal['header'] }}</p></div>
+    <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+      <!-- <img [src]="msgModal['icon'].src" [alt]="msgModal['icon'].src" width="25" height="25"> -->
+      <p>{{ msgModal['body'] }}</p>
+    </div>
+    <div class="modal-footer-white">
+			
+      <button *ngIf="!modalContinue" type="button" (click)="c('Salir')" class="btn-tvs-modal">Aceptar</button>
+      <button *ngIf="modalContinue" type="button" (click)="continueRegister();c('Salir')" class="btn-tvs-modal">Aceptar</button>
+		
+		</div>
+  </div>
+</ng-template>

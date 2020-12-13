@@ -1,0 +1,257 @@
+.setting-two-fa-container{
+  background-color: var(--first-color);
+  padding-top: 5%;
+  height: 95%;
+  width: 100%;
+  font-family: "Open Sans", serif;
+}
+.setting-two-fa-display-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.setting-two-fa-col{
+  width: 47%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Column step */
+.setting-two-distance-between-step{
+  margin-top: 2.9em;
+}
+.setting-two-fa-step-div{
+  background-color: #fff;
+  color: var(--first-color);
+  width: 80%;
+  height: 3.8em;
+  font-size: 1.2em;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  padding-left: 2.08em;
+  padding-right: 2.08em;
+}
+.setting-two-fa-step-div p{
+  margin: 0%;
+  padding: 0%;
+  line-height: 100%;
+  padding-left: 10px;
+}
+.setting-two-fa-number-step{
+  color: var(--first-color);
+  font-weight: bolder;
+}
+
+/* Column QR and Form */
+.setting-two-fa-text-div{
+  color: var(--seventh-color);
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.setting-two-fa-form-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.setting-two-fa-input-code{
+  border: var(--seventh-color) solid 1px;
+  background-color: var(--secondth-color);
+  border-radius: 12px;
+  font-size: 1.33em;
+  width: 70%;
+  color: white;
+  padding-left: 24px;
+}
+.setting-two-fa-input-div{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.setting-two-fa-text-label{
+  margin: 0%;
+  padding: 0%;
+  color: white;
+  padding-left: 15px;
+  font-size: 1.4em;
+}
+.setting-two-fa-button{
+  background-color: var(--secondth-color);
+  border-radius: 12px;
+  border:none;
+  width: 7rem;
+  font-size: 1.5rem;
+  color:white
+}
+.setting-two-fa-button:disabled{
+  background-color: var(--sixth-color);
+  color: var(--fifth-color);
+}
+/* checkbox custom */
+.setting-two-fa-label{
+  display: flex;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 24px;
+  height: 24px;
+  width: 24px;
+}
+.setting-two-fa-label input{
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+.checkbox-custom{
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  border: 1px solid white;
+}
+
+.setting-two-fa-label input:checked ~ .checkbox-custom {
+  background-color: var(--secondth-color);
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity:1;
+  border: 1px solid #FFFFFF;
+}
+
+
+.setting-two-fa-label .checkbox-custom::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity:1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+
+.setting-two-fa-label input:checked ~ .checkbox-custom::after {
+-webkit-transform: rotate(45deg) scale(1);
+-ms-transform: rotate(45deg) scale(1);
+transform: rotate(45deg) scale(1);
+opacity:1;
+left: 8px;
+top: 3px;
+width: 6px;
+height: 12px;
+border: solid var(--seventh-color);
+border-width: 0 2px 2px 0;
+background-color: transparent;
+border-radius: 0;
+}
+
+
+
+@media screen and (max-width: 1200px){
+  .setting-two-fa-step-div{
+    font-size: 0.9em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+  }
+  .setting-two-fa-input-code{
+    height: 2em;
+  }
+  .setting-two-fa-text-div{
+    font-size: 1em;
+  }
+  .setting-two-fa-button{
+    font-size: 1em;
+  }
+  .setting-two-fa-text-label{
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .setting-two-fa-step-div{
+    font-size: 0.95em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+@media screen and (max-width: 992px){
+  .setting-two-fa-step-div{
+    font-size: 0.9em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+/* Medium device (tablets) */
+@media screen and (max-width: 768px){
+  .setting-two-fa-col{
+    width: 50%;
+  }
+  .setting-two-fa-step-div{
+    font-size: 0.87em;
+  }
+}
+@media screen and (max-width: 576px){
+  .setting-two-fa-display-div{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding:5%;
+  }
+  .setting-two-distance-between-step{
+    margin-top: 1.48em;
+  }
+  .setting-two-fa-col{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .setting-two-fa-step-div{
+    font-size: 0.88em;
+    width: 90%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  @media screen and (max-height: 645px){
+    .setting-two-distance-between-step{
+      margin-top: 0.78em;
+    }
+    .setting-two-fa-text-div{
+      font-size: 1.2em;
+      margin-top: 0.5em;
+      margin-bottom: 0em;
+    }
+    .setting-two-fa-step-div{
+      font-size: 0.68em;
+    }
+  }  
+}

@@ -1,0 +1,129 @@
+.signin-container{
+  background-color: var(--first-color);
+  height: 95%;
+  font-family: "Open Sans", serif;
+}
+.signin-display-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  padding-top: 10%;
+}
+.signin-logo{
+  height: 35%;
+  margin-bottom: 2%;
+}
+.signin-text-div{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+  height: 15%;
+}
+.signin-form-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signin-form{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;;
+}
+.signin-input-div{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin-input{
+  background-color: var(--secondth-color);
+  border:1px solid var(--third-color);
+  border-radius: 12px;
+  font-size: 1.2em;
+  color: white;
+  padding-left: 15px;
+}
+.signin-input-invalid{
+  background-color: #f26868db;
+}
+.signin-input::placeholder{
+  color: var(--third-color);
+}
+.signin-btn{
+  background-color: var(--secondth-color);
+  border-radius: 12px;
+  border:none;
+  width: 7em;
+  font-size: 1.2em;
+  color:white
+}
+.signin-btn:disabled{
+  background-color: var(--sixth-color);
+  color: var(--fifth-color);
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  font-size: 0.9em;
+  width: 13.33em;
+  background-color: var(--fifth-color);
+  color: var(--tenth-color);
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 8px;
+  position: absolute;
+  z-index: 1;
+  margin-bottom: -5em;
+}
+/*     margin-bottom: -150px; */
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -15px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--fifth-color) transparent;
+}
+
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

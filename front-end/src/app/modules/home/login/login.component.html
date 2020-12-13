@@ -1,0 +1,80 @@
+
+
+<div class="login-container">
+  
+  <div class="m-auto col-xl-4 col-sm-6 col-md-4 h-75">
+    
+    <div class="container-fluid login-container d-flex justify-content-center align-items-center">
+
+
+      
+      <div class="flex-column align-items-center w-100">
+        <div class="justify-content-center d-flex">
+          <img [src]="logo.src" [alt]="logo.alt" class="logo-responsive">
+        </div>
+        <!-- Formulario -->
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(contenido)" class="form-responsive">
+
+          <div class="justify-content-center d-flex form-group ">
+            <div class="justify-content-center d-flex w-100" style="max-width: 25rem;">
+              
+              <input  type="text"
+                      class="form-control input-bg-secondth-color"
+                      maxlength="10" minLength="6" 
+                      formControlName="username" 
+                      placeholder="Usuario"
+              />
+            </div>
+          </div>
+          <!-- Label error input 1-->
+          <div *ngIf="isSubmitted && getForm.username.errors">
+            <span *ngIf="getForm.username.errors.required" class="mt-0 pt-0 label-error-message"> Requerido </span><!-- {{'login.error.required' | translate}} -->
+            <span *ngIf="getForm.username.errors.minlength" class="mt-0 pt-0 label-error-message"> Minimo 6 caracteres </span><!-- {{'login.error.minLength' | translate}} -->
+            <span *ngIf="getForm.username.errors.maxlength" class="mt-0 pt-0 label-error-message"> Maximo 10 caracteres </span><!-- {{'login.error.minLength' | translate}} -->
+            <span *ngIf="getForm.username.errors.pattern" class="mt-0 pt-0 label-error-message"> No cumple con el patron </span><!-- {{'login.error.pattern' | translate}} -->
+          </div>
+
+          <div class="justify-content-center d-flex form-group">
+            <div class="justify-content-center d-flex w-100" style="max-width: 25rem;">
+              <input
+                type="password"
+                class="input-bg-secondth-color form-control"
+                maxlength="10" minLength="6"
+                placeholder="Contraseña"
+                formControlName="password" /><!-- [placeholder]="'login.password' | translate  pattern="/^([a-zA-Z0-9 -/*.]+)$/"" -->
+            </div>
+          </div>
+          <!-- Label error input 2 -->
+          <div *ngIf="isSubmitted && getForm.password.errors">
+            <span *ngIf="getForm.password.errors.required" class="mt-0 pt-0 label-error-message"> Requerido </span><!-- {{'login.error.required' | translate}} -->
+            <span *ngIf="getForm.password.errors.minlength" class="mt-0 pt-0 label-error-message"> Minimo 6 caracteres </span><!-- {{'login.error.minLength' | translate}} -->
+            <span *ngIf="getForm.password.errors.maxlength" class="mt-0 pt-0 label-error-message"> Maximo 10 caracteres </span><!-- {{'login.error.minLength' | translate}} -->
+          </div>
+
+          <!-- buttons -->
+          <div class="justify-content-center d-flex form-group ">
+            <button type="submit" class="btn-bg-secondth-color btn"
+                    [style]="styles">Iniciar sesión</button><!-- {{'login.login' | translate }} -->
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- Modal --> 
+<ng-template #contenido let-modal let-c="close">
+  <div class="">
+    <div class="modal-header bg-first-color d-flex justify-content-center">
+      <h4 class="modal-title">{{ msgModal['header'][0]}}</h4>
+    </div>
+    <div class="modal-body">
+      <p>{{msgModal['body'][0]}}</p>
+    </div>
+    <div class="modal-footer-white justify-content-center ">
+      <button type="button" class="btn-tvs-modal" (click)="c('Salir')">Aceptar</button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,210 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css"; */
+
+@import "styles/_styles.css";
+
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+hr{
+  margin-top: 0 !important;
+}
+.w-60{
+    width: 60%;
+}
+.w-10{
+    width: 10%;
+}
+/*select*/
+.ng-select{
+    width: 100%;
+}
+.ng-select-container{
+    min-height: 2.5rem!important;
+    color: #05585F;
+}
+.ng-select.ng-select-disabled>.ng-select-container{
+    background-color:#ffffff
+}
+.ng-select .ng-has-value .ng-placeholder{
+    display:none;
+    color: #05585f;
+}
+.ng-select .ng-select-container{
+    color: #05585f !important;
+    background-color:transparent;
+    border-radius:3rem;
+    border:1.5px solid #05585f;
+}
+.ng-select .ng-select-container:hover{
+    box-shadow:0 1px 0 rgba(0,0,0,0.06)
+}
+.ng-select .ng-arrow-wrapper{
+    background: url("/assets/img/icon_aquamarine_circle_down.svg") no-repeat  !important;
+}
+.ng-select .ng-arrow-wrapper .ng-arrow, .ng-select .ng-arrow-wrapper:hover .ng-arrow{
+    border-color: transparent transparent transparent;
+}
+.ng-select.ng-select-opened>.ng-select-container{
+    background:transparent;
+    border-color:#05585F;
+}
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow{
+    border-color:transparent transparent transparent;
+    }
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow:hover{
+    border-color:transparent transparent transparent
+}
+.ng-select.ng-select-opened.ng-select-bottom>.ng-select-container{
+    border-radius:3rem;
+    border: 0.2rem solid #05585f;
+}
+.ng-select.ng-select-opened.ng-select-top>.ng-select-container{
+    border-radius:0.5rem;
+}
+.ng-dropdown-panel{
+    background-color:#00808B;
+    border:1px solid #00808B;
+    box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+.ng-dropdown-panel.ng-select-bottom{
+    top:100%;
+    border-radius:10px;
+    border-top-color:#00808B;
+    margin-top:0.5rem
+}
+.ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:last-child{
+    border-radius:1rem;
+}
+.ng-dropdown-panel.ng-select-top{
+    bottom:100%;
+    border-radius:1rem;
+    border-bottom-color:#00808B;
+    margin-bottom:-1px
+}
+.ng-dropdown-panel.ng-select-top .ng-dropdown-panel-items .ng-option:first-child{
+    border-radius: 1rem
+}
+.ng-dropdown-panel .ng-dropdown-header{
+    border-bottom:1px solid #00808B;
+    padding:0.2rem 0.2rem
+}
+.ng-dropdown-panel .ng-dropdown-footer{
+    border-top:1px solid #00808B;
+    padding:0.2rem 0.2rem
+}
+.ng-dropdown-panel .ng-dropdown-panel-items{
+    margin-bottom:1px
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup{
+    user-select:none;
+    padding:0.5rem 0.5rem;
+    font-weight:500;
+    color:white;
+    cursor:pointer
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-disabled{
+    cursor:default
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-marked{
+    color:#00808B
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected{
+    color:#00808B;
+    font-weight:600
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
+    background-color:#00808B;
+    color:#E6E6E6;
+    padding:0.5rem 0.5rem;
+    border-radius:1rem;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected{
+    color:#00808B!important;
+    background-color:#E6E6E6
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected .ng-option-label{
+    font-weight:600
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked{
+    color:#00808B!important;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled{
+    color: #999999;
+}
+/*SCROLL*/
+/* width */
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #05585F;
+    background-color: #05585F;
+    border-radius: 0.8rem;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 0.8rem;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+}
+::-webkit-scrollbar-button:vertical:increment {
+    background: url("/assets/img/icon_gray_scroll_down.svg") no-repeat 50% 50%;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background: url("/assets/img/icon_gray_scroll_up.svg") no-repeat 50% 50%;
+}
+
+.scroller {
+    scrollbar-color:  #999999 #05585F;
+    scroll-width:thin;
+}
+
+/* Extra lare device(Large desktop)
+@media screen and (max-width: 1200px){
+    body {
+        font-size: 16px;
+    }
+} */
+/* Large device (desktops)
+@media screen and (max-width: 992px){
+    body {
+        font-size: 15px;
+    }
+} */
+/* Medium device (tablets)
+@media screen and (max-width: 768px){
+    body {
+        font-size: 14px;
+    }
+} */
+/* Samll device (phones)
+@media screen and (max-width: 576px){
+    body {
+        font-size: 13px;
+    }
+}*/
+/* iPhone 5/SE
+@media screen and (max-width: 320px){
+    body {
+        font-size: 12px;
+    }
+} */
+/* Galaxy Fold
+@media screen and (max-width: 280px){
+    body {
+        font-size: 10px;
+    }
+} */

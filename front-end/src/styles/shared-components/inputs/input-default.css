@@ -1,0 +1,31 @@
+.tvs-input{
+  border: 0.2rem solid var(--secondth-color);
+  border-radius: 1.5rem;
+  color: var(--secondth-color);
+  display: block;
+  height: 2.5rem;
+  outline: none;
+  padding-left: 1.5rem;
+  transition: backgroud-color 1s;
+  width: 100%;
+}
+
+.tvs-input:hover, .tvs-input:focus{
+  background: var(--secondth-color);
+  color: var(--third-color);
+  outline: none;
+  transition: backgroud-color 0.5s;
+}
+.tvs-input:focus::placeholder{
+  color: var(--third-color);
+  transition: color 0.5s;
+}
+.tvs-input::placeholder{
+  color: var(--sixth-color);
+  transition: color 0.5s;
+}
+
+.tvs-input:hover::placeholder{
+  color: var(--third-color);
+  transition: color 0.5s;
+}
