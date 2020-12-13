@@ -8,3 +8,4 @@
 /.versions
 /.vscode
 /back/node_modules
+/back/package-lock.json
