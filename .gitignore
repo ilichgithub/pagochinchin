@@ -9,3 +9,5 @@
 /.vscode
 /back/node_modules
 /back/package-lock.json
+/front-end/node_modules
+/front-end/package-lock.json
